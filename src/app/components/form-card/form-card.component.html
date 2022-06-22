@@ -1,0 +1,18 @@
+<form (ngSubmit)="addCard()">
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Titulo de la card:</label>
+      <input name="cardTitle" type="text" [(ngModel)]="card.cardTitle" class="form-control" id="cardTitle" placeholder="Escribe el nombre de la card">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Descripcion:</label>
+      <input name="descripcion" type="text" [(ngModel)]="card.description" class="form-control" id="descripcion" placeholder="Añade una descripcion">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">URL de Imagen:</label>
+      <input name="url" type="text" [(ngModel)]="card.url" class="form-control" id="url" placeholder="Ingresa la URL de la imagen">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear</button>
+    <button type="reset" class="btn btn-danger" style="margin-left: 10px;">Borrar</button>
+  </form>
