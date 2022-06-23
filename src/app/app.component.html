@@ -38,36 +38,10 @@
     </div>
   </div>
 </nav>
+
 <br>
+
+
 <div class="container">
-  <div class="row">
-    <div class="col">
-
-      <legend>Crear nueva card</legend>
-
-      <app-form-card (envioCard)="addCard($event)"></app-form-card>
-      <br>
-
-    <div class="row">
-    <div class="col-4" *ngFor="let item of dataCard">
-      <app-card [cardTitle]="item.cardTitle" [description]="item.description" [url]="item.url" [button]="item.button"></app-card>
-    </div>
-    </div>
-
-  <br>
-
-  <div class="col-7">
-  <span class="badge bg-primary">Canada</span>
-  <span class="badge bg-secondary">Grecia</span>
-  <span class="badge bg-success">Camerun</span>
-  <span class="badge bg-danger">Francia</span>
-  <span class="badge bg-warning">Georgea</span>
-  <span class="badge bg-info">Sudan</span>
-  <span class="badge bg-light">Corea</span>
-  <span class="badge bg-dark">Japon</span>
-  <span class="badge bg-primary">Inglaterra</span>
-  <span class="badge bg-secondary">Jamaica</span>
-  </div>
-  </div>
+  <router-outlet></router-outlet>
 </div>
-

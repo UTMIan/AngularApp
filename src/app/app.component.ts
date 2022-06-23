@@ -8,18 +8,7 @@ import { CardModel } from './models/card.model';
 })
 export class AppComponent {
   title = 'angularApp';
-  card: CardModel = new CardModel();
-  dataCard: CardModel[] = [
-    {
-      cardTitle: "Title Card Example",
-      description: "Description Example",
-      button: "Button Example",
-      url: "https://www.mbacenterglobal.com/uploads/images/2022/3/1646300677"
-    }
-  ]
-  addCard(card: CardModel) {
-  this.dataCard.push(Object.assign({},card));
-}
+
 }
 
 
