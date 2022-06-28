@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  urlNewsApi: "https://newsapi.org"
+  urlNewsApi: "https://newsapi.org",
+  urlMarvelApi: "https://developer.marvel.com"
 };
 
 /*
