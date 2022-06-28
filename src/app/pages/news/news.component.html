@@ -1,6 +1,9 @@
-<app-card *ngFor="let article of articles" 
-[cardTitle]="article.title"
-[description]="article.description"
-[url]="article.urlToImage"
-[button]="article.author"
-></app-card>
+<div class="row" style="width: 100%;">
+ <div class="col-lg-4">
+    <app-card *ngFor="let article of articles" 
+    [cardTitle]="article.title"
+    [description]="article.description"
+    [url]="article.urlToImage"
+    [button]="article.author"></app-card>
+ </div>
+</div>
