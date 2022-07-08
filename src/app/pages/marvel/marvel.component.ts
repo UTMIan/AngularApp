@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleModel } from 'src/app/models/Article.model';
-import { mArticleModel } from 'src/app/models/mArticle.model';
+import { Personajes } from 'src/app/models/ArticleMarvel.model';
+import { MarvelService } from '../../services/marvel.service';
 
 @Component({
   selector: 'app-marvel',
@@ -9,13 +9,14 @@ import { mArticleModel } from 'src/app/models/mArticle.model';
 })
 export class MarvelComponent implements OnInit {
 
-  constructor(private: MarvelComponent) { }
-  public articles: mArticleModel[]=[];
+  constructor(private MarvelService: MarvelService){}
+    public marvels: Personajes[]=[];
 
-  ngOnInit(): void {
-    this.MarvelService.getMarvel().subscribe((response:any) => {
-      console.log(response.articles);
-      this.articles = response.articles;
-    });
+    ngOnInit(): void{
+      this.MarvelService.getMarvel().subscribe((Response: any)=>{
+        console.log(Response.data)
+        this.marvels=Response.data.results;
+      });
+    }
+    
   }
-}

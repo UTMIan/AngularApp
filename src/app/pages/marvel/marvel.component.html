@@ -1,1 +1,9 @@
-<p>marvel works!</p>
+<div class="row">
+    <div class="col-4">
+        <app-card *ngFor="let marvel of marvels"
+        [cardTitle]="marvel.name"
+        [description]="marvel.description"
+        [button]="'Go to' + marvel.thumbnail">
+        </app-card>
+    </div>
+</div>

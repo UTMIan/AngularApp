@@ -1,22 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
+import { Md5 } from "md5-typescript";
 
 @Injectable({
   providedIn: 'root'
 })
-export class NewsService {
+export class MarvelService {
+url = environment.urlMarvelApi;
 
-  url = environment.urlMarvelApi;
-  constructor(private http: HttpClient) { }
+  constructor(private http:HttpClient) { }
+
   getMarvel(){
     const query = {
-      q: "", 
-      from: "",
-      sortBy: "",
-      apiKey: "a8ca78a8bb2f576761856f4dd87b3de2"
+      limit: 40,
+      ts: new Date().getTime(),
+      apikey: environment.publickey,
+      hash: Md5.init(new Date().getTime() + environment.privatekey + environment.publickey)
     }
-    
-    return this.http.get(`${this.url}/v2/everything`,{params: query});
-  }
+    return this.http.get(`${this.url}:443/v1/public/characters`,{params: query});
+}
 }
