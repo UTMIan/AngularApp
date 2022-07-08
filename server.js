@@ -13,6 +13,5 @@ app.get('/*', (req, res) =>
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 3338);
 
-server.listen(port, () => {
-    console.log(`Listening on http://localhost:${port}/`);
-  });
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
